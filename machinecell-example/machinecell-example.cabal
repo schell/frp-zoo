@@ -1,4 +1,4 @@
-name:                Yampa-example
+name:                machinecell-example
 version:             0.1.0.0
 license:             PublicDomain
 author:              Hidenori Azuma
@@ -7,12 +7,12 @@ category:            FRP
 build-type:          Simple
 cabal-version:       >=1.10
 
-executable Yampa-example
+executable machinecell-example
   hs-source-dirs:      ., ../shared
   main-is:             Main.hs
   build-depends:       base >=4.6 && <4.9
-                     , gloss >=1.9.2.1
-                     , gloss-algorithms >=1.9.2.1
-                     , Yampa >= 0.9.3
+                     , gloss >=1.7.8.1
+                     , machinecell >= 3.0.1
+                     , gloss-algorithms
   default-language:    Haskell2010
   ghc-options: -W -Wall

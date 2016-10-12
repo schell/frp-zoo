@@ -2,35 +2,27 @@
 
 # FRP Zoo
 
-Interested in trying FRP, but overwhelmed by the number of FRP libraries to choose from? To help you with this choice, this repository contains several implementations of the same small program, to give you a taste what each library looks like.
+Interested in trying FRP (Functional Reactive Programming), but overwhelmed by the number of FRP libraries to choose from? To help you with this choice, this repository contains several implementations of the same small program, to give you a taste of what each library looks like.
 
 library | classification | example app
 :---:|:---:|:---:
+[artery](https://hackage.haskell.org/package/artery) | scenarios 0 and 5, arrowized, signals | [code](artery-example/Main.hs)
+[auto](https://hackage.haskell.org/package/auto) | scenarios 0 and 10, arrowized, signals | [code](auto-example/Main.hs)
+[DysFRP](https://hackage.haskell.org/package/DysFRP) | scenarios 0 and 10, higher-order, behaviours and events | [code](DysFRP/Main.hs)
 [elerea](https://hackage.haskell.org/package/elerea) | scenarios 0 and 5, higher-order, signals | [code](elerea-example/Main.hs)
-[euphoria](https://github.com/tsurucapital/euphoria) | scenario 0, higher-order, step signals, behaviours and events | [code](euphoria-example/Main.hs)
+[euphoria](https://hackage.haskell.org/package/euphoria) | scenario 0, higher-order, step signals, behaviours and events | [code](euphoria-example/Main.hs)
 [FRPNow](https://hackage.haskell.org/package/frpnow) | scenario 0, higher-order, behaviours and events | [code](frpnow-example/Main.hs)
 [grapefruit](https://hackage.haskell.org/package/grapefruit-frp) | scenario 0, higher-order, step signals, behaviours and events | [code](grapefruit-example/Main.hs)
+[machinecell](https://hackage.haskell.org/package/machinecell) | scenarios 0 and 5, arrowized, signals | [code](machinecell-example/Main.hs)
 [netwire](https://hackage.haskell.org/package/netwire) | all three scenarios, arrowized, continuous, signals | [code](netwire-example/Main.hs)
 [varying](https://hackage.haskell.org/package/varying) | all three scenarios, arrowized or applicative, continuous, signals | [code](varying-example/Main.hs)
 [ordrea](https://hackage.haskell.org/package/ordrea) | scenario 0, higher-order, step signals, behaviours and events | [code](ordrea-example/Main.hs)
 [reactive-bacon](https://hackage.haskell.org/package/reactive-bacon) | scenarios 0 and 5, asynchronous data flow, behaviours and events | [code](reactive-bacon-example/Main.hs)
 [reactive-banana](https://hackage.haskell.org/package/reactive-banana) | scenario 0, higher-order, behaviours and events | [code](reactive-banana-example/Main.hs)
+[reflex](https://hackage.haskell.org/package/reflex) | scenarios 0 and 5, higher-order, behaviours and events | [code](reflex-example/Main.hs)
 [sodium](https://hackage.haskell.org/package/sodium) | scenarios 0 and 5, higher-order, behaviours and events | [code](sodium-example/Main.hs)
 [Yampa](https://hackage.haskell.org/package/Yampa) | scenarios 0 and 5, arrowized, continuous, signals | [code](Yampa-example/Main.hs)
-[Animas](https://hackage.haskell.org/package/Animas) | untested | —
-[artery](https://hackage.haskell.org/package/artery) | untested | —
-[bot](https://hackage.haskell.org/package/bot) | untested | —
-[buster](https://hackage.haskell.org/package/buster) | untested | —
-[definitive-reactive](https://hackage.haskell.org/package/definitive-reactive) | untested | —
-[Dflow](https://hackage.haskell.org/package/Dflow) | untested | —
-[drClickOn](https://hackage.haskell.org/package/drClickOn) | untested | —
-[DysFRP](https://hackage.haskell.org/package/DysFRP) | untested | —
-[Moe](https://hackage.haskell.org/package/Moe) | untested | —
-[peakachu](https://hackage.haskell.org/package/peakachu) | untested | —
-[reaction-logic](https://hackage.haskell.org/package/reaction-logic) | untested | —
-[reactive](https://hackage.haskell.org/package/reactive) | unmaintained | —
-[reenact](https://hackage.haskell.org/package/reenact) | untested | —
-[rsagl-frp](https://hackage.haskell.org/package/rsagl-frp) | untested | —
+[reactive](https://hackage.haskell.org/package/reactive) |  Conal Elliott's original FRP implementation, unmaintained | —
 
 For comparison, here are a few non-FRP implementations of the same small program.
 
@@ -62,7 +54,7 @@ For our toy program, we implement all three scenarios.
 
 ## Specification
 
-A [gloss](gloss.ouroborus.net) window shall display six buttons, organized as three columns of two buttons. Each column implements one of the above scenarios: the first column chooses 0, the second column chooses 5, and the third column chooses 10. In each column, there is a button whose clicks are counted, and a toggle button to turn the click-counting on and off, starting with on. When off, the counter displays -1.
+A [gloss](http://gloss.ouroborus.net) window shall display six buttons, organized as three columns of two buttons. Each column implements one of the above scenarios: the first column chooses 0, the second column chooses 5, and the third column chooses 10. In each column, there is a button whose clicks are counted, and a toggle button to turn the click-counting on and off, starting with on. When off, the counter displays -1.
 
 To be completely precise about the three scenarios:
 
@@ -108,7 +100,7 @@ Evan's presentation classifies FRP libraries into four categories according to t
 * Events and behaviours: an FRP library in which there are two kinds of reactive objects: behaviours hold a value at every point in time, while events only hold values when the event they represent occurs.
 * Signals: an FRP library in which all reactive values hold a value at every point in time. Typically, events are represented via `Maybe`.
 * Step signals: a separate representation for signals whose value only changes at specific points in time, typically when an event occurs.
-* Continuous: an FRP library in the style of Conal Elliott, meaning that signals are functions from time to values. This built-in notion of time allows interpolation between values, and other time-based transformations.
+* Continuous: an FRP library [in the style of Conal Elliott](https://github.com/conal/talk-2015-essence-and-origins-of-frp#readme), meaning that signals are functions from time to values. This built-in notion of time allows interpolation between values, and other time-based transformations.
 
 
 ## Contributing
