@@ -1,5 +1,5 @@
 name:                varying-example
-version:             0.1.0.0
+version:             0.2.0.0
 license:             PublicDomain
 author:              Schell Scivally
 maintainer:          schell.scivally@synapsegroup.com
@@ -10,9 +10,9 @@ cabal-version:       >=1.10
 executable varying-example
   hs-source-dirs:      ., ../shared
   main-is:             Main.hs
-  build-depends:       base >=4.6 && <4.9
+  build-depends:       base >=4.6 && <5
                      , gloss >=1.9.2.1
                      , gloss-algorithms >=1.9.2.1
-                     , varying >= 0.1.1
+                     , varying >= 1.0
   default-language:    Haskell2010
   ghc-options: -W -Wall

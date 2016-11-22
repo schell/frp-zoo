@@ -15,7 +15,7 @@ library | classification | example app
 [grapefruit](https://hackage.haskell.org/package/grapefruit-frp) | scenario 0, higher-order, step signals, behaviours and events | [code](grapefruit-example/Main.hs)
 [machinecell](https://hackage.haskell.org/package/machinecell) | scenarios 0 and 5, arrowized, signals | [code](machinecell-example/Main.hs)
 [netwire](https://hackage.haskell.org/package/netwire) | all three scenarios, arrowized, continuous, signals | [code](netwire-example/Main.hs)
-[varying](https://hackage.haskell.org/package/varying) | all three scenarios, arrowized or applicative, continuous, signals | [code](varying-example/Main.hs)
+[varying](https://hackage.haskell.org/package/varying) | all three scenarios, arrowized, applicative, piece-wise monadic, continuous, signals | [code](varying-example/Main.hs)
 [ordrea](https://hackage.haskell.org/package/ordrea) | scenario 0, higher-order, step signals, behaviours and events | [code](ordrea-example/Main.hs)
 [reactive-bacon](https://hackage.haskell.org/package/reactive-bacon) | scenarios 0 and 5, asynchronous data flow, behaviours and events | [code](reactive-bacon-example/Main.hs)
 [reactive-banana](https://hackage.haskell.org/package/reactive-banana) | scenario 0, higher-order, behaviours and events | [code](reactive-banana-example/Main.hs)
